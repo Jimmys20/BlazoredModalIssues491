@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using BlazoredModalIssues491;
+using Blazored.Modal;
 
 namespace BlazoredModalIssues491;
 
@@ -13,6 +14,8 @@ public class Program
         builder.RootComponents.Add<HeadOutlet>("head::after");
 
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+        builder.Services.AddBlazoredModal();
 
         await builder.Build().RunAsync();
     }
